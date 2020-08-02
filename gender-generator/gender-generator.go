@@ -15,8 +15,8 @@ type genderRules struct {
 }
 
 type genderRulesGroup struct {
-	Exceptions genderRule `json:"exceptions"`
-	Suffixes   genderRule `json:"suffixes"`
+	Exceptions genderRule `json:"exceptions,omitempty"`
+	Suffixes   genderRule `json:"suffixes,omitempty"`
 }
 
 type genderRule struct {
