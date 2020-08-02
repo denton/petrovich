@@ -51,7 +51,7 @@ func main() {
 
 	fmt.Fprint(o, "// DO NOT EDIT!\n// Code generated from rules/gender.json\n\npackage petrovich\n\n")
 
-	fmt.Fprint(o, "var gender = genderRules{\n\tfFirstName: genderRulesGroup{\n")
+	fmt.Fprint(o, "var gender = genderRules{\n\tFirstName: genderRulesGroup{\n")
 	printRulesGroup(o, r.Gender.FirstName)
 
 	fmt.Fprint(o, "\t},\n\tMiddleName: genderRulesGroup{\n")
@@ -76,15 +76,15 @@ func printRulesGroup(o io.Writer, g genderRulesGroup) {
 func printRule(o io.Writer, s genderRule) {
 	fmt.Fprint(o, "\t\t\tAndrogynous: []string{\n")
 	for _, t := range s.Androgynous {
-		fmt.Fprintf(o, "\t\t\t\t\t\"%s\",\n", t)
+		fmt.Fprintf(o, "\t\t\t\t\"%s\",\n", t)
 	}
-	fmt.Fprint(o, "\t\t\t\t},\n\t\t\t\tFemale: []string{\n")
+	fmt.Fprint(o, "\t\t\t\t},\n\t\t\tFemale: []string{\n")
 	for _, t := range s.Female {
-		fmt.Fprintf(o, "\t\t\t\t\t\"%s\",\n", t)
+		fmt.Fprintf(o, "\t\t\t\t\"%s\",\n", t)
 	}
-	fmt.Fprint(o, "\t\t\t\t},\n\t\t\t\tMale: []string{\n")
+	fmt.Fprint(o, "\t\t\t\t},\n\t\t\tMale: []string{\n")
 	for _, t := range s.Male {
-		fmt.Fprintf(o, "\t\t\t\t\t\"%s\",\n", t)
+		fmt.Fprintf(o, "\t\t\t\t\"%s\",\n", t)
 	}
-	fmt.Fprint(o, "\t\t\t\t},\n\t\t\t},\n")
+	fmt.Fprint(o, "\t\t\t\t},\n")
 }
