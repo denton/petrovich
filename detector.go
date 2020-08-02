@@ -80,7 +80,7 @@ func DetectGender(name Name) Gender {
 
 	if name.Middle != "" {
 		resMiddle = checkGenderExceptions(gender.MiddleName, name.Middle)
-		resMiddle = append(resMiddle, checkGenderSuffixes(gender.MiddleName, name.Middle)...)
+		resMiddle = append(resMiddle, checkGenderSuffixes(gender.MiddleName, strings.ToLower(name.Middle))...)
 
 		if len(resMiddle) > 0 && resMiddle[0] != Androgynous {
 			return resMiddle[0]
@@ -88,11 +88,11 @@ func DetectGender(name Name) Gender {
 	}
 	if name.First != "" {
 		resFirst = checkGenderExceptions(gender.FirstName, name.First)
-		resFirst = append(resFirst, checkGenderSuffixes(gender.FirstName, name.First)...)
+		resFirst = append(resFirst, checkGenderSuffixes(gender.FirstName, strings.ToLower(name.First))...)
 	}
 	if name.Last != "" {
 		resLast = checkGenderExceptions(gender.LastName, name.Last)
-		resLast = append(resLast, checkGenderSuffixes(gender.LastName, name.Last)...)
+		resLast = append(resLast, checkGenderSuffixes(gender.LastName, strings.ToLower(name.Last))...)
 	}
 
 	if len(resFirst) > 0 && len(resLast) > 0 {
