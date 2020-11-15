@@ -1,4 +1,4 @@
-module github.com/striker2000/petrovich
+module github.com/denton/petrovich
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
